@@ -62,11 +62,15 @@ def print_results(results_dic, results_stats_dic, model,
         Returns:
                 None - simply printing results.
         """ 
-        print("Results for CNN model :{model}")   
+        print(f"Results for CNN model :{model}")   
 
         print("-"*30)
         for stat,value in results_stats_dic.items():
-                print(f"{stat}:{value}")
+                if "pct" in stat:
+                        val="{:.1f}".format(float(value))
+                        print(f"{stat}:{val} % ")
+                else:
+                        print(f"{stat}:{value}")
         if print_incorrect_dogs:
                 print("\n Incorrectly Dogs Classified :")
                 for file_name,info in results_dic.items():

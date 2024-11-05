@@ -98,7 +98,7 @@ def calculates_results_stats(results_dic):
         if n_dogs_img!=0:
                 pct_correct_dogs=(n_correct_dogs/n_dogs_img)*100
         if n_dogs_img!=0:
-                pct_correct_breed=(n_correct_breed/n_images)*100
+                pct_correct_breed=(n_correct_breed/n_dogs_img)*100
         if n_notdogs_img!=0:
                 pct_correct_notdogs=(n_correct_notdogs/n_notdogs_img)*100
 
@@ -111,6 +111,7 @@ def calculates_results_stats(results_dic):
         results_stats_dic["n_correct_dogs"]=n_correct_dogs
         results_stats_dic["n_correct_breed"]=n_correct_breed
         results_stats_dic["n_correct_notdogs"]=n_correct_notdogs
+        
         results_stats_dic["pct_match"]=pct_match
         results_stats_dic["pct_correct_dogs"]=pct_correct_dogs
         results_stats_dic["pct_correct_breed"]=pct_correct_breed
