@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: Ahmad Ismail
 # DATE CREATED: 5/11/2024
-# REVISED DATE: 
+# REVISED DATE: 6/11/2024 -->after submission 
 # PURPOSE: Create a function print_results that prints the results statistics
 #          from the results statistics dictionary (results_stats_dic). It 
 #          should also allow the user to be able to print out cases of misclassified
@@ -75,14 +75,14 @@ def print_results(results_dic, results_stats_dic, model,
                 print("\n Incorrectly Dogs Classified :")
                 for file_name,info in results_dic.items():
                         if info[3]==1 and info[4]==0:
-                                print(f"{file_name} Classified as not dog but its an actual dog")
+                                print(f"{file_name} Classified not dog : {info[1]}...  but its an actual dog its :{info[0]} ")
                         elif info[3]==0 and info[4]==1:
-                                print(f"{file_name} Classified as a dog but its not an actual not ")
+                                print(f"{file_name} Classified as a dog as: {info[1]}... but its not an actual dog its :{info[0]} ")
         if print_incorrect_breed:
                 print("\n Incorrectly Classified  Breeds:")
                 for file_name,info in results_dic.items():
                         if info[3]==1 and info[4]==1 and info[0]  not in info[1]:
-                                print(f"{file_name} Actual Breed :{info[0]} while Classified  as {info[1]}")
+                                print(f"{file_name} Actual Breed :{info[0]}... while Classified  as : {info[1]}")
         
         print("-_-"*30)
 
