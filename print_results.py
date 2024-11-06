@@ -64,7 +64,7 @@ def print_results(results_dic, results_stats_dic, model,
         """ 
         print(f"Results for CNN model :{model}")   
 
-        print("-"*30)
+        print("-_-"*30)
         for stat,value in results_stats_dic.items():
                 if "pct" in stat:
                         val="{:.1f}".format(float(value))
@@ -77,15 +77,14 @@ def print_results(results_dic, results_stats_dic, model,
                         if info[3]==1 and info[4]==0:
                                 print(f"{file_name} Classified as not dog but its an actual dog")
                         elif info[3]==0 and info[4]==1:
-                                print(f"{file_name} Classified as a dog but its an actual not  dog")
+                                print(f"{file_name} Classified as a dog but its not an actual not ")
         if print_incorrect_breed:
                 print("\n Incorrectly Classified  Breeds:")
                 for file_name,info in results_dic.items():
-                        if info[3]==1 and info[4]==1 and info[0] != info[1]:
+                        if info[3]==1 and info[4]==1 and info[0]  not in info[1]:
                                 print(f"{file_name} Actual Breed :{info[0]} while Classified  as {info[1]}")
         
-
-
+        print("-_-"*30)
 
         None
                 
